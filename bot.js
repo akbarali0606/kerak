@@ -23,12 +23,7 @@ connection.connect((err) => {
   sendMessageToAll();
 });
 
-const bot = new TelegramBot(token, { polling: true });
-bot.start((ctx) =>
-  ctx.reply(
-    `Salom, ${ctx.from.first_name}! Kino tomosha qilish uchun kodni kiriting:`
-  )
-);
+
 
 function sendMessageToAll() {
   connection.query("SELECT id FROM users", (err, results) => {
