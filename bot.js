@@ -5,6 +5,8 @@ require("dotenv").config();
 
 const token = process.env.TOKEN;
 
+const bot = new TelegramBot(token, { polling: true });
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
